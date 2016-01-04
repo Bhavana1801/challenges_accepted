@@ -1,0 +1,22 @@
+Hi All,
+
+        Suppose you are working for a cricket information website(like espncricinfo or cricbuzz) where you have data of several countries and you need to sort them based on certain criterion. The data is given as a list of rows, where each row has the following format
+
+TeamName #Wins #Losses #Draws
+
+Assuming that each Team name is unique, you have to sort team names
+a. First by decreasing number of wins(i.e team with relatively more number of wins should get lesser rank).
+b. then by increasing number of losses.
+c. then by decreasing number of draws.
+You could also assume that no two teams have same values for all Wins, Losses and Draws.
+
+For example on the following data
+England 	4 2 3
+India 		5 2 4
+Australia 	6 2 3
+SouthAfrica 5 3 4
+Bangladesh 	3 4 2
+Zimbabwe 	3 4 6
+Ireland 	3 4 1
+the sorted order is
+Australia India SouthAfrica England Zimbabwe Bangladesh Ireland

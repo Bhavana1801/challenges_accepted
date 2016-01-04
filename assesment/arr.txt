@@ -1,0 +1,37 @@
+Write an optimized algorithm to find the non-repeated element in the given array
+where other all elements are repeated exactly once..
+
+The fastest (O(n)) and most memory efficient (O(1)) way is with the XOR operation.
+
+C code:
+-------
+int arr[] = {3, 2, 5, 2, 1, 5, 3};
+
+int num = 0, i;
+
+for (i=0; i < 7; i++)
+    num ^= arr[i];
+
+printf("%i\n", num);
+
+This prints "1", which is the only one that occurs once.
+
+This works because the first time you hit a number it marks the num variable with itself,
+and the second time it unmarks num with itself (more or less). The only one that remains
+unmarked is your non-duplicate.
+
+for more understanding look at the table
+ XOR Truth Table
+Input          Output
+A    B
+0    0    0    (A & B are same, and o/p is 0 )
+0    1    1    (A & B are different, and o/p is 1 )
+1    0    1    (A & B are different, and o/p is 1 )
+1    1    0    (A & B are same, and o/p is 0 )
+
+In the same passion when you XOR same numbers o/p would be 0
+
+Ex: 3 ^ 2 ^ 5 ^ 2 ^ 1 ^ 5 ^ 3 => 1, because:
+       3 ^ 3 = 0
+       2 ^ 2 = 0
+       5 ^ 5 = 0
