@@ -1,0 +1,10 @@
+1)http://lipsum.com/ - lorem ipsum
+2)<link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css"> it will link the font into our stylesheet
+3) h2 {
+    font-family: Lobster, Monospace;
+  }
+if lobster is not available then it will apply monospace,
+4) img tags are self closable.
+5) <img class="class1 class2"> - we can have multiple classes like this.
+6)border-radius:10px.. adds the rounded borders.
+border-radius:50%- perfectly circular border will come
