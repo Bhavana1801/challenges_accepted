@@ -1,3 +1,5 @@
+package geeksforgeeks;
+
 //output= 10 20 30
 //operations
 public class llOperations {
@@ -229,174 +231,174 @@ class operations {
 		System.out.println(main.data);
 	}
 	public Node reverse(Node node) {
-        Node prev = null;
-        Node curr = node;
-        Node next = null;
-        //we will make every next of a node point to its previous.
-        while(curr != null) {
-        	// printList(curr);
-        	// System.out.println();
-        	next = curr.next;
-        	curr.next = prev;
-        	prev = curr;
-        	curr = next;
+      Node prev = null;
+      Node curr = node;
+      Node next = null;
+      //we will make every next of a node point to its previous.
+      while(curr != null) {
+      	// printList(curr);
+      	// System.out.println();
+      	next = curr.next;
+      	curr.next = prev;
+      	prev = curr;
+      	curr = next;
 
-        }
-        head = prev;
-        // printList(head);
-        return head;
-    }
-    public void makeLoop() {
+      }
+      head = prev;
+      // printList(head);
+      return head;
+  }
+  public void makeLoop() {
 
-    }
-    public void detectLoop() {
-    	head1 = new Node(10);
-    	Node node1 = new Node(20);
-    	Node node2 = new Node(30);
-    	Node node3 = new Node(40);
-    	Node node4 = new Node(50);
-    	//10 20 30 40 50 30 40 50
-    	head1.next = node1;
-    	node1.next = node2;
-    	node2.next = node3;
-    	node3.next = node4;
-    	// node4.next = null;
-    	node4.next = node2;
-    	Node temp1 = head1;
-    	Node temp2 = head1;
-    	boolean flag = false;
-    	// System.out.println("loop is\n");
-    	// printList(head);
-    	while(temp2!=null && temp2.next!=null) {
-    		temp1 = temp1.next;
-    		temp2 = temp2.next.next;
-    		// System.out.println("temp1"+temp1.data+" temp2 "+temp2.data);
-    		if(temp1 == temp2) {
-    			System.out.println("found loop");
-    			// System.out.println(temp1.data);
-    			flag = true;
-    			break;
-    		}
+  }
+  public void detectLoop() {
+  	head1 = new Node(10);
+  	Node node1 = new Node(20);
+  	Node node2 = new Node(30);
+  	Node node3 = new Node(40);
+  	Node node4 = new Node(50);
+  	//10 20 30 40 50 30 40 50
+  	head1.next = node1;
+  	node1.next = node2;
+  	node2.next = node3;
+  	node3.next = node4;
+  	// node4.next = null;
+  	node4.next = node2;
+  	Node temp1 = head1;
+  	Node temp2 = head1;
+  	boolean flag = false;
+  	// System.out.println("loop is\n");
+  	// printList(head);
+  	while(temp2!=null && temp2.next!=null) {
+  		temp1 = temp1.next;
+  		temp2 = temp2.next.next;
+  		// System.out.println("temp1"+temp1.data+" temp2 "+temp2.data);
+  		if(temp1 == temp2) {
+  			System.out.println("found loop");
+  			// System.out.println(temp1.data);
+  			flag = true;
+  			break;
+  		}
 
-    	}
-    	System.out.println("no loop");
-    	if(flag == true)
-    	detectLoopStart(head,temp1);
-    	removeLoop(head,temp1);
-    }
-    public void detectLoopStart(Node head,Node temp1) {
-    	Node temp2 = temp1;
-    	int size = 1;
-    	temp2 = temp2.next;
-    	//finding loop size
-    	while(temp2 != temp1) {
-    		temp2 = temp2.next;
-    		size++;
-    	}
-    	temp1 = temp2 = head;
-    	int count = 0;
-    	//moving temp2 loopsize times
-    	while(count < size) {
-    		temp2 = temp2.next;
-    		count++;
-    	}
-    	//finding the first meet point
-    	while(temp1 != null && temp2 != null) {
-    		if(temp1 == temp2) break;
-    		else {
-    			temp1 = temp1.next;
-    			temp2 = temp2.next;
-    		}
-    	}
+  	}
+  	System.out.println("no loop");
+  	if(flag == true)
+  	detectLoopStart(head,temp1);
+  	removeLoop(head,temp1);
+  }
+  public void detectLoopStart(Node head,Node temp1) {
+  	Node temp2 = temp1;
+  	int size = 1;
+  	temp2 = temp2.next;
+  	//finding loop size
+  	while(temp2 != temp1) {
+  		temp2 = temp2.next;
+  		size++;
+  	}
+  	temp1 = temp2 = head;
+  	int count = 0;
+  	//moving temp2 loopsize times
+  	while(count < size) {
+  		temp2 = temp2.next;
+  		count++;
+  	}
+  	//finding the first meet point
+  	while(temp1 != null && temp2 != null) {
+  		if(temp1 == temp2) break;
+  		else {
+  			temp1 = temp1.next;
+  			temp2 = temp2.next;
+  		}
+  	}
 
-    	System.out.println("first loop found at "+temp1.data);
-    }
-    public void removeLoop(Node head,Node temp1) {
-    	Node temp2 = temp1;
-    	int size = 1;
-    	temp2 = temp2.next;
-    	//finding loop size
-    	while(temp2 != temp1) {
-    		temp2 = temp2.next;
-    		size++;
-    	}
-    	temp1 = temp2 = head;
-    	int count = 0;
-    	//moving temp2 loopsize times
-    	while(count < size) {
-    		temp2 = temp2.next;
-    		count++;
-    	}
-    	//finding the first meet point
-    	while(temp1 != null && temp2 != null) {
-    		if(temp1.next == temp2.next){
-    			temp2.next = null;
-    		}
-    		else {
-    			temp1 = temp1.next;
-    			temp2 = temp2.next;
-    		}
-    	}
-    	System.out.println("hello");
-    	printList(head);
-    	// System.out.println("first loop found at "+temp1.data);
-    }
-    public Node mergeRec(Node first, Node second) {
-    	if(first==null)
-    		return second;
-    	if(second == null)
-    		return first;
-    	System.out.println("first "+first.data+" second "+second.data);
-    	if(first.data <= second.data) {
-    		first.next = merge(first.next,second);
-    		return first;
-    	}
-    	else {
-    		second.next = merge(first,second.next);
-    		return second;
-    	}
-    }
-    public Node merge(Node first, Node second) {
-    	Node head=null;
-    	if(first == null)
-    		return second;
-    	if(second == null)
-    		return first;
-    	//creating head for the new node is done.
-    	if(first.data <= second.data) {
-    		head = first;
-    		first = first.next;
-    	}
-    	else {
-    		head = second;
-    		second = second.next;
-    	}
-    	Node current = head;
-    	while((first!=null)||(second != null)) {
-    		if(first == null) {
-    			current.next = second;
-    			break;
-    		}	
-    		else if(second == null) {
-    			current.next = first;
-    			break;
-    		}
-    		if(first.data <= second.data) {
-    			current.next = first;
-    			current = current.next;
-    			first = first.next;
-    		}
-    		else {
-    			current.next = second;
-    			current = current.next;
-    			second= second.next;
-    		}
+  	System.out.println("first loop found at "+temp1.data);
+  }
+  public void removeLoop(Node head,Node temp1) {
+  	Node temp2 = temp1;
+  	int size = 1;
+  	temp2 = temp2.next;
+  	//finding loop size
+  	while(temp2 != temp1) {
+  		temp2 = temp2.next;
+  		size++;
+  	}
+  	temp1 = temp2 = head;
+  	int count = 0;
+  	//moving temp2 loopsize times
+  	while(count < size) {
+  		temp2 = temp2.next;
+  		count++;
+  	}
+  	//finding the first meet point
+  	while(temp1 != null && temp2 != null) {
+  		if(temp1.next == temp2.next){
+  			temp2.next = null;
+  		}
+  		else {
+  			temp1 = temp1.next;
+  			temp2 = temp2.next;
+  		}
+  	}
+  	System.out.println("hello");
+  	printList(head);
+  	// System.out.println("first loop found at "+temp1.data);
+  }
+  public Node mergeRec(Node first, Node second) {
+  	if(first==null)
+  		return second;
+  	if(second == null)
+  		return first;
+  	System.out.println("first "+first.data+" second "+second.data);
+  	if(first.data <= second.data) {
+  		first.next = merge(first.next,second);
+  		return first;
+  	}
+  	else {
+  		second.next = merge(first,second.next);
+  		return second;
+  	}
+  }
+  public Node merge(Node first, Node second) {
+  	Node head=null;
+  	if(first == null)
+  		return second;
+  	if(second == null)
+  		return first;
+  	//creating head for the new node is done.
+  	if(first.data <= second.data) {
+  		head = first;
+  		first = first.next;
+  	}
+  	else {
+  		head = second;
+  		second = second.next;
+  	}
+  	Node current = head;
+  	while((first!=null)||(second != null)) {
+  		if(first == null) {
+  			current.next = second;
+  			break;
+  		}	
+  		else if(second == null) {
+  			current.next = first;
+  			break;
+  		}
+  		if(first.data <= second.data) {
+  			current.next = first;
+  			current = current.next;
+  			first = first.next;
+  		}
+  		else {
+  			current.next = second;
+  			current = current.next;
+  			second= second.next;
+  		}
 
-    	}
-    	return head;
-    }
-    public Node mergeRec2(Node list1, Node list2) {
-    	Node result = null;
+  	}
+  	return head;
+  }
+  public Node mergeRec2(Node list1, Node list2) {
+  	Node result = null;
 		//base cases
 		if(list1 == null)
 			return list2;

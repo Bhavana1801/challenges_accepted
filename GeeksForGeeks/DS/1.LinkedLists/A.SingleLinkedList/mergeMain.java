@@ -1,3 +1,5 @@
+package geeksforgeeks;
+
 class mergeMain {
 	public static void main(String[] args) {
 		operations obj = new operations();
@@ -17,6 +19,5 @@ class mergeSort {
 			return;
 		Node start = head;
 		Node end = head.next;
-		while()
 	}
 }

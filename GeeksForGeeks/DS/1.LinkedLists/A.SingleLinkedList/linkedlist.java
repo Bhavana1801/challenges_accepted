@@ -1,3 +1,5 @@
+package geeksforgeeks;
+
 //output= 10 20 30
 class Node {
 	int data;

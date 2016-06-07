@@ -1,9 +1,13 @@
 // 
 #include <stdio.h>
-
+	 
+inc()
+{
+        static int x;
+        printf("ab","bc","cd");
+	printf("%d", ++x);
+}
 int main()
 {
-      char far *farther, *farthest;
-      printf("%d..%d", sizeof(farther), sizeof(farthest));
-      return 0;
-}
+        int a = 5, b = 2;
+printf("%d",a+++++b);
