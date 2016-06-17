@@ -1,7 +1,7 @@
 /**check if string has unique characters
  * without any use of additional data structures.
  */
-package chapter1;
+package ArraysAndStrings;
 
 /**
  * @author bhavs

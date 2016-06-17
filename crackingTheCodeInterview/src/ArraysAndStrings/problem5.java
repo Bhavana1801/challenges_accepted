@@ -1,4 +1,4 @@
-package chapter1;
+package ArraysAndStrings;
 //aabcccccaaa
 //output: a2b1c5a3
 public class problem5 {

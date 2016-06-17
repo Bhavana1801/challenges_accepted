@@ -1,4 +1,4 @@
-package chapter1;
+package ArraysAndStrings;
 //reverse a string
 public class problem2 {
 

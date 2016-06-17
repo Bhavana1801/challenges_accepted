@@ -1,7 +1,7 @@
 /**
  * 
  */
-package chapter1;
+package ArraysAndStrings;
 
 import java.util.Arrays;
 

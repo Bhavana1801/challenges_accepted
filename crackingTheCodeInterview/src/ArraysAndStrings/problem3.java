@@ -1,4 +1,4 @@
-package chapter1;
+package ArraysAndStrings;
 //check whether two strings are permutations of each other
 
 public class problem3 {

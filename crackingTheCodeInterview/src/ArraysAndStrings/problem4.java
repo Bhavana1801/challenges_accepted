@@ -1,4 +1,4 @@
-package chapter1;
+package ArraysAndStrings;
 //replace spaces with %20
 public class problem4 {
 

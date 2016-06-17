@@ -1,7 +1,7 @@
 /** rotate an image by 90degrees.
  * 
  */
-package chapter1;
+package ArraysAndStrings;
 
 import java.util.Arrays;
 
